@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+<link type="text/css" rel="stylesheet" href="../../static/css/nes.min.css">
+<style>
+    html, body, pre, code, kbd, samp {
+        font-family: "Press Start 2P",serif;
+    }
+</style>
+<p th:text="'hello SpringBoot'"></p>
+
+<form action="/sharks/admin/login/" method="post">
+    username: <input type="text" />
+    password: <input type="password" />
+    <input type="submit" name="login">
+</form>
+</body>
+</html>

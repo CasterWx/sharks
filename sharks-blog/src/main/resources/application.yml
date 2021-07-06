@@ -1,0 +1,19 @@
+server:
+  port: 0
+
+spring:
+  datasource:
+    url: jdbc:h2:file:~/.sharks-antzuhl/db/halo
+    username: admin
+    password: 123456
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  thymeleaf:
+    enabled: true #开启thymeleaf视图解析
+    encoding: utf-8 #编码
+    prefix: classpath:/templates/ #前缀
+    cache: false  #是否使用缓存
+    mode: HTML  #严格的HTML语法模式
+    suffix: .html #后缀名
