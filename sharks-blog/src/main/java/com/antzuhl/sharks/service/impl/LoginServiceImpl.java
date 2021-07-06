@@ -15,6 +15,7 @@ import org.springframework.util.DigestUtils;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Iterator;
 
 /**
  * @author AntzUhl
@@ -54,5 +55,11 @@ public class LoginServiceImpl implements LoginService {
             e.printStackTrace();
         }
         return Response.success("Login success");
+    }
+
+    @Override
+    public boolean isFirstStart() {
+        long hasUser = userRepository.count();
+        return hasUser <= 0;
     }
 }

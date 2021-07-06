@@ -8,7 +8,4 @@ package com.antzuhl.sharks.security;
 public class AuthContext {
 
     private static final ThreadLocal<UserInfo> context = new ThreadLocal<UserInfo>();
-
-
-
 }

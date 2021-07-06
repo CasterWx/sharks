@@ -13,4 +13,5 @@ public interface LoginService {
 
     Response login(HttpServletResponse response, String username, String password);
 
+    boolean isFirstStart();
 }

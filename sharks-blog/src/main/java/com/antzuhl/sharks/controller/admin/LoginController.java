@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * @author AntzUhl
@@ -32,9 +33,21 @@ public class LoginController {
      * login page
      * */
     @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // TODO not user info, register user
+        if (loginService.isFirstStart()) {
+            log.info(">>>> first start application, please register user");
+            response.sendRedirect("/sharks/admin/login/register");
+        }
         return new ModelAndView("/admin/login");
+    }
+
+    /**
+     * register page
+     * */
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public ModelAndView registerPage() {
+        return new ModelAndView("/admin/register");
     }
 
     /**
